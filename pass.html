@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <title>Pass WebApss Assignmnet-6</title>
+    <h2>Pass phrase by Nikhil Porika</h2>
+    <h2>Getting input</h2>
+    <form>
+        <label for="form1_age">Enter the secret phrase</label>
+        <input type="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value="Let me in"> <br>
+        <label for="form1_nick">Enter a phrase</label>
+        <input type="text" id="form1_nick" name="form1_nick" autofocus> <br>
+        <input type="button" onclick="processPhrase()" value="Check the phrase">
+        <!-- <input type="button" onclick="resolveForm()" value="Get values from form"> -->
+    </form>
+    <p id="result">This text will be replaced </p>
+    <script>
+        var correct = 0;
+        var wrong = 0;
+        function processPhrase() {
+            console.log("Getting form values")
+            sphrase = document.getElementById("secret_phrase").value
+            phrase = document.getElementById("phrase").value
+            out = document.getElementById("result")
+            if (sphrase == phrase) {
+                correct = correct + 1
+                alert("Access is allowed")
+                out.innerHTML = "Correct:" + correct
+            } else {
+                wrong = wrong + 1
+                alert("Access is denied")
+                out.innerHTML = "Wrong:" + wrong
+            }
+        }
+    </script>
+</body>
+
+</html>
