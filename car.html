@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>
+        Car Assignment-6
+    </title>
+    <script>
+        let my_car;
+        function orderCar() {
+            electric = document.getElementById("electric").checked
+            ac = document.getElementById("ac").checked
+            gps = document.getElementById("gps").checked
+            my_car = electric + " and " + ac + " and " + gps;
+            document.getElementById("cresult").innerHTML = my_car;
+        }
+        function updateCar() {
+            color = document.getElementById("color").value;
+            property = document.getElementById("pvalue").value;
+            my_car = color + " and " + property;
+            document.getElementById("cresult").innerHTML = my_car;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>
+            <marquee>Nikhil Porika orders a Car</marquee>
+        </h2>
+        <form>
+            <div class="row mb-3">
+                <div class="col-sm-10 offset-sm-2">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="electric" name="electric" value="electric">
+                        <label for="electric" class="form-check-label">Electric</label></br>
+                        <input type="checkbox" class="form-check-input" id="ac" name="ac" value="ac">
+                        <label for="ac" class="form-check-label">AC</label></br>
+                        <input type="checkbox" class="form-check-input" id="gps" name="gps" value="gps">
+                        <label for="gps" class="form-check-label">GPS</label></br>
+                    </div>
+                    <input type="button" class="btn btn-primary" onclick="orderCar()" value="Order a car"><br><br>
+                    <div class="row mb-3">
+                        <label for="color" class="col-sm-2 col-form-label">Enter a property</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="color" name="color" value="color"><br>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="pvalue" class="col-sm-2 col-form-label">Enter a value</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="pvalue" name="pvalue"><br>
+                        </div>
+                    </div>
+                    <input type="button" class="btn btn-primary" onclick="updateCar()" value="Update the car">
+        </form><br>
+        <br>
+        <div class="fw-bold">Value are: <span id="cresult" style="background-color:cornsilk"> </span></div>
+
+</body>
+
+</html>
