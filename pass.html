@@ -21,6 +21,7 @@
     <script>
         var correct = 0;
         var wrong = 0;
+        var currentimage = 1;
         function processPhrase() {
             console.log("Getting form values")
             sphrase = document.getElementById("secret_phrase").value
@@ -36,6 +37,24 @@
                 out.innerHTML = "Wrong:" + wrong
             }
         }
+        function newimage() {
+            switch (currentimage) {
+                case 1:
+                    document.getElementById("rimage").src = "Alligator.jpg";
+                    currentimage=2;
+                    break;
+                case  2:
+                    document.getElementById("rimage").src = "Indian-Elephant.png";
+                    currentimage=3;
+                    break;
+                case 3:
+                    document.getElementById("rimage").src = "Kangaroo.png";
+                    currentimage=4;
+                    break;
+
+            }
+        }
+
     </script>
 </body>
 
